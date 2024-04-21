@@ -1,6 +1,6 @@
 package sample05;
 
-public class StarTest01 {
+public class StarTest02 {
 
 	public static void main(String[] args) {
 
@@ -13,6 +13,11 @@ public class StarTest01 {
 	    	}
 	    	// 정수 k가 0부터 4까지 오름차순으로 반복되도록 설정하였습니다.
 	    	for(int k = 0; k < i + 1; k++) {
+	    		// 함수식 반복이 1회 종료될 때마다 반복된 횟수만큼 별 기호가 출력되도록 설정하였습니다.
+	    		System.out.print("*");
+	    	}
+	    	// 정수 m이 0부터 3까지 오름차순으로 반복되도록 설정하였습니다.
+	    	for(int m = 0; m < i; m++) {
 	    		// 함수식 반복이 1회 종료될 때마다 반복된 횟수만큼 별 기호가 출력되도록 설정하였습니다.
 	    		System.out.print("*");
 	    	}
