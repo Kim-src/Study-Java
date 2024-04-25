@@ -7,7 +7,7 @@ public class StarTest03 {
 		for(int i = 0; i < 7; i++) {
 			for(int j = 0; j < i + 4; j++) {
 				
-				if(i + j < 3) {
+				if(j < 3 - i) {
 					System.out.print(" ");
 				} else if(j < i - 3) {
 					System.out.print(" ");
