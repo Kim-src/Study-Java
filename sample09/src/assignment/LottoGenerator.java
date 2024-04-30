@@ -8,60 +8,15 @@ public class LottoGenerator {
 	public static void main(String[] args) {
 		
 		// * 로또 프로그램 요구사항 * //
-		// 1. 로또 개인 번호 생성 : 개발자가 직접 입력
-		// 2. 로또 당첨 번호 생성 : 컴퓨터가 랜덤 출력
-		// 3. 로또 보너스 번호 생성 : 컴퓨터가 랜덤 출력
+		// 1. 로또 당첨 번호 생성 : 컴퓨터가 랜덤 출력
+		// 2. 로또 보너스 번호 생성 : 컴퓨터가 랜덤 출력
+		// 3. 로또 개인 번호 생성 : 개발자가 직접 입력
 		// 4. 로또 번호 일치 결과 출력 : 상세한 로또 당첨 번호 출력
 		// 5. 로또 당첨 결과 등수 출력 : 로또 당첨 등수 또는 낙첨 출력
-		// 결과 출력 전, 100% 당첨되는 번호로 당첨 결과 출력 테스트 필요
-		
-		
-		// * 개인의 로또 번호 * //
-		
-		// 개인이 입력한 로또 번호 6개를 참조할 수 있는 배열을 생성하였습니다. 
-		int[] lottoUserNumber = new int[6];
-		// 로또 번호 입력 기능 제공을 위한 scan 변수를 생성하였습니다.
-		Scanner scan = new Scanner(System.in);
-		
-		// lottoUserNumbers 배열에 정수를 입력할 수 있도록 설정하였습니다.
-		for(int i = 0; i < lottoUserNumber.length; i++) {
-			System.out.print("로또 번호 입력 = ");
-			lottoUserNumber[i] = scan.nextInt();
-			
-			// 1부터 45까지의 정수를 입력하도록 설정하였습니다.
-			if(lottoUserNumber[i] < 1 || lottoUserNumber[i] > 45) {
-				System.out.println("1부터 45까지의 정수를 입력해주세요.");
-				// 반복문을 중지시키지 않고 인덱스만 차감되도록 설정하였습니다.
-				i--;
-			}
-			
-			// lottoUserNumbers 배열 요소 중 동일한 값이 있을 경우 재입력을 요청하였습니다. 
-			for(int j = 0; j < i; j++) {
-				// 이중 for 반복문을 이용하여 배열의 전체 인덱스에 대한 요소를 비교하였습니다.
-				// 중복값이 존재할 경우 if 조건문이 실행되도록 설정하였습니다.
-				if(lottoUserNumber[j] == lottoUserNumber[i]) {
-					System.out.println("중복값입니다. 다시 입력해주세요.");
-					// 인덱스를 감소시킴으로써 중복값 입력이 무효화되도록 설정하였습니다.
-					i--;
-					// 내부 for 반복문이 즉시 종료되고 초기 for 반복문으로 이동되도록 설정하였습니다.  
-					break;
-				}
-			}
-		}
-		
-		
-		System.out.println("-----------------------------------");
-		
-		
-		// 개인이 입력한 로또 번호를 출력하였습니다.
-		System.out.println("개인 로또 번호 = " + Arrays.toString(lottoUserNumber));
-		
-		
-		System.out.println("-----------------------------------");
+		// 결과 출력 전, 당첨 결과 출력 테스트 필요
 		
 		
 		// * 로또 당첨 번호 * //
-		
 		// 로또 당첨 번호 6개를 참조할 수 있는 배열을 생성하였습니다.
 		int[] lottoWinningNumber = new int[6];
 		// 로또 보너스 번호 1개를 참조할 수 있는 배열을 생성하였습니다.
@@ -93,9 +48,61 @@ public class LottoGenerator {
 			}
 		}
 		
+		System.out.println("-----------------------------------");
+		
 		// 로또 당첨 번호를 출력하였습니다.
 		System.out.println("로또 당첨 번호 = " + Arrays.toString(lottoWinningNumber));
 		System.out.println("로또 보너스 번호 = " + Arrays.toString(lottoBonusNumber));
+		
+		
+		System.out.println("-----------------------------------");
+		
+		
+		
+		// * 개인의 로또 번호 * //
+		
+		// 개인이 입력한 로또 번호 6개를 참조할 수 있는 배열을 생성하였습니다. 
+		int[] lottoUserNumber = new int[6];
+		// 로또 번호 입력 기능 제공을 위한 scan 변수를 생성하였습니다.
+		Scanner scan = new Scanner(System.in);
+		
+		// lottoUserNumbers 배열에 정수를 입력할 수 있도록 설정하였습니다.
+		for(int i = 0; i < lottoUserNumber.length; i++) {
+			System.out.print("로또 번호 입력 = ");
+			lottoUserNumber[i] = scan.nextInt();
+			
+			// 1부터 45까지의 정수를 입력하도록 설정하였습니다.
+			if(lottoUserNumber[i] < 1 || lottoUserNumber[i] > 45) {
+				System.out.println("1부터 45까지의 정수를 입력해주세요.");
+				// 반복문을 중지시키지 않고 인덱스만 차감되도록 설정하였습니다.
+				i--;
+				// 조건문을 완전 이탈하지는 않도록 설정하였습니다.
+				continue;
+			}
+			
+			// lottoUserNumbers 배열 요소 중 동일한 값이 있을 경우 재입력을 요청하였습니다. 
+			for(int j = 0; j < i; j++) {
+				// 이중 for 반복문을 이용하여 배열의 전체 인덱스에 대한 요소를 비교하였습니다.
+				// 중복값이 존재할 경우 if 조건문이 실행되도록 설정하였습니다.
+				if(lottoUserNumber[j] == lottoUserNumber[i]) {
+					System.out.println("중복값입니다. 다시 입력해주세요.");
+					// 인덱스를 감소시킴으로써 중복값 입력이 무효화되도록 설정하였습니다.
+					i--;
+					// 내부 for 반복문이 즉시 종료되고 초기 for 반복문으로 이동되도록 설정하였습니다.  
+					break;
+				}
+			}
+		}
+		
+		// 스캐너 사용을 종료하였습니다.
+		scan.close();
+		
+		
+		System.out.println("-----------------------------------");
+		
+		
+		// 개인이 입력한 로또 번호를 출력하였습니다.
+		System.out.println("개인 로또 번호 = " + Arrays.toString(lottoUserNumber));
 		
 		
 		System.out.println("-----------------------------------");
@@ -165,13 +172,23 @@ public class LottoGenerator {
 		
 		// 로또 번호 일치 결과 출력을 위한 배열을 생성하였습니다.
 		int[] detailWinningNumber = new int[6];
+		int[] detailBonusNumber = new int[1];
 		
-		// 로또 번호를 일치 결과 출력을 위한 반복문을 생성하였습니다.
+		// 로또 일반 번호 일치 결과 출력을 위한 반복문을 생성하였습니다.
 		for(int i = 0; i < lottoWinningNumber.length; i++) {
 			for(int j = 0; j < lottoUserNumber.length; j++) {
 				
 				if(lottoWinningNumber[i] == lottoUserNumber[j]) {
 					detailWinningNumber[i] = lottoWinningNumber[i];
+				}
+			}
+		}
+		
+		// 로또 보너스 번호 일치 결과 출력을 위한 반복문을 생성하였습니다.
+		for(int i = 0; i < lottoBonusNumber.length; i++) {
+			for(int j = 0; j < lottoUserNumber.length; j++) {
+				if(lottoBonusNumber[i] == lottoUserNumber[j]) {
+					detailBonusNumber[i] = lottoBonusNumber[i];
 				}
 			}
 		}
