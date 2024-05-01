@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 
 public class Student {
 
+	// String int 등 앞에 아무것도 없어보이지만 'default' 상태임
 	String myName;
 	int kor;
 	int eng;
