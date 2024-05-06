@@ -1,11 +1,11 @@
-package kr.it.assignment;
+package kr.it.backup;
 
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GoogoodanMaster {
+public class GoogoodanMasterVersion_5 {
 	
 	/* 해결해야 될 것 */
 	// 1. answer를 입력할 때마다 타이머 감소가 더 가속되는 이유 파악하기
@@ -17,7 +17,7 @@ public class GoogoodanMaster {
 	// countTime의 초기값 설정을 위한 변수를 먼저 설정하였습니다.
 	// 그리고 countTime은 countTimeDefault에 할당된 값을 참조하게 설정하였습니다.
 	// 참고로 static ~
-	static int countTimeDefault = 3;
+	static int countTimeDefault = 10;
 	static int countTime = countTimeDefault;
 	
 	public static void main(String[] args) {
@@ -30,7 +30,6 @@ public class GoogoodanMaster {
 		int consequent = 0;
 		// 구구단 곱셈식 반복문을 위한 변수를 생성하였습니다.
 		int gameCoin = 0;
-		int gameCoinMax = 5;
 		// 구구단 게임 정답 입력 시간 초과 시 반복문 종료를 위한 변수를 생성하였습니다.
 		boolean gameOver = false;
 		// 구구단 곱셈식 정답 입력을 위해 Scanner 클래스를 사용하였습니다.
@@ -44,7 +43,7 @@ public class GoogoodanMaster {
 		
 		/* 구구단 게임 시작 */
 		// 최대 5개 문제를 풀이하도록 설정하였습니다.
-		while(gameCoin < gameCoinMax && gameOver == false) {
+		while(gameCoin < 5 && gameOver == false) {
 		
 			/* 구구단 곱셈식 */
 			for(int i = 0; i < array.length; i++) {
@@ -73,11 +72,6 @@ public class GoogoodanMaster {
 			};
 						
 			
-			/* 구구단 문제 출력 */
-			System.out.println(countTimeDefault + "초 안에 정답을 입력하시오.");
-			System.out.println(antecedent + " X " + consequent + " = ");
-			
-			
 			/* 구구단 타이머 시작 */
 			// Date 클래스를 이용하여 타이머 시작 시간을 설정하였습니다.
 			// 이는 타이머 시작 시간을 정확히 설정하는 방법 중 하나입니다.
@@ -88,6 +82,8 @@ public class GoogoodanMaster {
 			
 			
 			/* 구구단 정답 입력 */
+			System.out.println("5초 안에 정답을 입력하시오.");
+			System.out.println(antecedent + " X " + consequent + " = ");
 			answer = scan.nextInt();
 
 						
@@ -113,12 +109,9 @@ public class GoogoodanMaster {
 				gameOver = true;
 			}
 			
-			/* while 반복문 1회 종료 시 로직 */
-			// 구구단 문항 구분을 위해 공백을 출력하였습니다.
+			// 공백 및 while 반복문 종료 로직을 설정하였습니다.
 			System.out.println();
-			// 타이머가 누적되지 않도록 초기화하였습니다.
 			timer.cancel();
-			// while 반복문이 반복되도록, 그리고 언젠가 종료되도록 설정하였습니다.
 			gameCoin++;
 		
 		}
@@ -138,7 +131,7 @@ public class GoogoodanMaster {
 		System.out.println();
 		
 		System.out.println("-----게임 점수-----");
-		System.out.println(user + "님 점수 = " + score + "점, " + "만점 = " + gameCoinMax + "점");
+		System.out.println(user + "님 점수 = " + score + "점, " + "만점 = " + gameCoin + "점");
 		
 		// Scanner 클래스를 종료시켰습니다.
 		scan.close();
