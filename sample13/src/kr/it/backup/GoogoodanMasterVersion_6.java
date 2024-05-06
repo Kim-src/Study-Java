@@ -1,20 +1,22 @@
-package kr.it.assignment;
+package kr.it.backup;
 
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GoogoodanMaster {
+public class GoogoodanMasterVersion_6 {
 	
+	/* 해결해야 될 것 */
+	// 1. answer를 입력할 때마다 타이머 감소가 더 가속되는 이유 파악하기
+	// 2. 입력 시간 초과 시 answer 입력 후에만 '입력 시간 초과' 안내문이 출력되고 게임이 종료되는데, answer를 입력하지 않아도 '입력 시간 초과' 안내문이 출력되고 게임이 종료되게 설정할 수 있는지 알아보기
+	// 3. countTime을 정의할 때 왜 static 데이터 타입으로 선언해야만 되는지 파악하기
 	
 	// 구구단 게임 타이머 설정을 위한 변수를 생성하였습니다.
 	// 타이머 값 초기화 시 변수에 할당된 값을 일일이 변경하지 않기 위해
 	// countTime의 초기값 설정을 위한 변수를 먼저 설정하였습니다.
 	// 그리고 countTime은 countTimeDefault에 할당된 값을 참조하게 설정하였습니다.
-	// 타이머 관련 변수를 static으로 선언한 이유는 Timer 관련 클래스 특성 상 모든 인스턴스에 공유되어야 되기 때문입니다.
-	// static이기 때문에 모든 게임 인스턴스가 동일한 타이머 시간을 공유하게 됩니다.
-	// 결정적으로는 static으로 설정하지 않으면 Timer 관련 클래스에서 에러가 발생됩니다.
+	// 참고로 static ~
 	static int countTimeDefault = 3;
 	static int countTime = countTimeDefault;
 	
@@ -28,7 +30,7 @@ public class GoogoodanMaster {
 		int consequent = 0;
 		// 구구단 곱셈식 반복문을 위한 변수를 생성하였습니다.
 		int gameCoin = 0;
-		int gameCoinMax = 10;
+		int gameCoinMax = 5;
 		// 구구단 게임 정답 입력 시간 초과 시 반복문 종료를 위한 변수를 생성하였습니다.
 		boolean gameOver = false;
 		// 구구단 곱셈식 정답 입력을 위해 Scanner 클래스를 사용하였습니다.

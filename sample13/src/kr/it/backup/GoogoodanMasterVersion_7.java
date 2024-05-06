@@ -1,11 +1,11 @@
-package kr.it.assignment;
+package kr.it.backup;
 
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GoogoodanMaster {
+public class GoogoodanMasterVersion_7 {
 	
 	
 	// 구구단 게임 타이머 설정을 위한 변수를 생성하였습니다.
