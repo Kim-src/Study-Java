@@ -1,19 +1,17 @@
-package kr.it.assignment;
+package kr.it.backup;
 
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GoogoodanMaster {
+public class GoogoodanMasterVersion_4 {
 	
 	/* 해결해야 될 것 */
 	// 1. answer를 입력할 때마다 타이머 감소가 더 가속되는 이유 파악하기
 	// 2. 입력 시간 초과 시 answer 입력 후에만 '입력 시간 초과' 안내문이 출력되고 게임이 종료되는데, answer를 입력하지 않아도 '입력 시간 초과' 안내문이 출력되고 게임이 종료되게 설정할 수 있는지 알아보기
 	// 3. countTime을 정의할 때 왜 static 데이터 타입으로 선언해야만 되는지 파악하기
 	
-	// 구구단 게임 타이머 설정을 위한 변수를 생성하였습니다.
-	// static ~
 	static int countTime = 10;
 	
 	public static void main(String[] args) {
