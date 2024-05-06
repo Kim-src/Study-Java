@@ -1,12 +1,10 @@
-package kr.it.assignment;
+package kr.it.backup;
 
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GoogoodanMaster {
-	
-	static int countTime = 5;
+public class GoogoodanMasterVersion_2 {
 	
 	public static void main(String[] args) {
 		
@@ -18,11 +16,13 @@ public class GoogoodanMaster {
 		int consequent = 0;
 		// 구구단 곱셈식 반복문을 위한 변수를 생성하였습니다.
 		int quiz = 0;
-		// 구구단 곱셈식 정답 입력을 위해 Scanner 클래스를 사용하였습니다.
-		Scanner scan = new Scanner(System.in);
+		// 구구단 곱셈식 정답 확인을 위한 변수를 생성하였습니다.
 		int answer = 0;
 		// 구구단 채점을 위한 변수를 생성하였습니다.
 		int score = 0;
+		
+		// 구구단 곱셈식 정답 입력을 위해 Scanner 클래스를 사용하였습니다.
+		Scanner scan = new Scanner(System.in);
 		// 구구단 게임 참여자의 이름 입력을 위한 변수를 생성하였습니다.
 		String user;
 		
@@ -40,35 +40,11 @@ public class GoogoodanMaster {
 					consequent = array[j];
 				}
 			}
-			
-			
+		
 			/* 구구단 정답 입력 */
-			System.out.println("5초 안에 정답을 입력하시오.");
-			System.out.println(antecedent + " X " + consequent + " = ");
+			System.out.println("정답을 입력하시오.");
+			System.out.print(antecedent + " X " + consequent + " = ");
 			answer = scan.nextInt();
-			
-			/* 구구단 타이머 설정 */
-			Timer timer = new Timer();
-			TimerTask task = new TimerTask() {
-				public void run() {
-					if(countTime > 0) {
-						System.out.println(countTime + "초");
-						countTime--;
-					}
- 					else {
-						timer.cancel();
-						System.out.println("-----게임 종료-----");
-					}
-				}
-			};
-			
-			timer.schedule(task, 0, 1000);
-			if(answer == antecedent*consequent) {
-				timer.cancel();
-			}
-//			else if(answer != antecedent*consequent) {
-//				timer.cancel();
-//			}
 			
 			
 			/* 구구단 정답 확인 */
