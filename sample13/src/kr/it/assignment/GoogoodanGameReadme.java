@@ -5,34 +5,47 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GoogoodanMaster {
+public class GoogoodanGameReadme {
+	
+	/* 프로젝트 설명 */
+	
+	// 본 프로젝트는 구구단 게임이며 핵심 기능은 아래와 같습니다.
+	// 1. 랜덤의 구구단 곱셈식 생성 및 출력
+	// 2. 매 곱셈식마다 게임 타이머 작동
+	// 3. 정답 입력 및 점수 채점 결과에 따른 게임 결과 출력
+	// 4. 타이머 시간 초과 시에 따른 게임 결과 출력
+	
+	// 핵심 변수는 아래와 같습니다.
+	// 1. gameCoinMax : 게임 실행 횟수 결정
+	// 2. countTimeDefault : 게임 타이머 시간 설정(초)
+	// 각 변수는 클래스 내에서 일일이 값을 할당시키지 않기 위해 정의한 것입니다.
 	
 	
-	// 구구단 게임 타이머 설정을 위한 변수를 생성하였습니다.
-	// 타이머 값 초기화 시 변수에 할당된 값을 일일이 변경하지 않기 위해
-	// countTime의 초기값 설정을 위한 변수를 먼저 설정하였습니다.
-	// 그리고 countTime은 countTimeDefault에 할당된 값을 참조하게 설정하였습니다.
-	// 타이머 관련 변수를 static으로 선언한 이유는 Timer 관련 클래스 특성 상 모든 인스턴스에 공유되어야 되기 때문입니다.
-	// static이기 때문에 모든 게임 인스턴스가 동일한 타이머 시간을 공유하게 됩니다.
-	// 결정적으로는 static으로 설정하지 않으면 Timer 관련 클래스에서 에러가 발생됩니다.
+	/* static 변수 정의 */
+	// countTime 변수의 초기값을 설정하기 위해 countTimeDefault 변수를 정의하였습니다.
 	static int countTimeDefault = 3;
+	// countTime 변수에 countTimeDefault 변수에서 참조하는 값을 할당시켰습니다.
 	static int countTime = countTimeDefault;
 	
 	public static void main(String[] args) {
+	
 		
-		/* 구구단 게임 체계 */
+		/* 일반 변수 정의 */
 		// 구구단 곱셈식 설계를 위한 배열을 생성하였습니다.
 		int[] array = new int[9];
-		// 구구단의 전항 및 후항에 대한 변수를 생성하였습니다.
+		// 구구단의 전항 변수를 생성하였습니다.
 		int antecedent = 0;
+		// 구구단의 후항 변수를 생성하였습니다.
 		int consequent = 0;
 		// 구구단 곱셈식 반복문을 위한 변수를 생성하였습니다.
 		int gameCoin = 0;
+		// 구구단 게임 실행 횟수를 결정하는 값을 할당받는 변수를 생성하였습니다.
 		int gameCoinMax = 10;
 		// 구구단 게임 정답 입력 시간 초과 시 반복문 종료를 위한 변수를 생성하였습니다.
 		boolean gameOver = false;
 		// 구구단 곱셈식 정답 입력을 위해 Scanner 클래스를 사용하였습니다.
 		Scanner scan = new Scanner(System.in);
+		// answer 변수에 입력된 정답을 할당시켰습니다.
 		int answer = 0;
 		// 구구단 채점을 위한 변수를 생성하였습니다.
 		int score = 0;
@@ -41,7 +54,7 @@ public class GoogoodanMaster {
 		
 		
 		/* 구구단 게임 시작 */
-		// 최대 5개 문제를 풀이하도록 설정하였습니다.
+		// 최대 gameCoinMax개 문제를 풀이하도록 설정하였습니다.
 		while(gameCoin < gameCoinMax && gameOver == false) {
 		
 			/* 구구단 곱셈식 정의 */
