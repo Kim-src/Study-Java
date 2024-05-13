@@ -88,7 +88,7 @@ public class ListTest01 {
 			System.out.println(value);
 		}
 		
-		System.out.println("----------");
+		System.out.println("----------Iterator");
 		
 		// 리스트 출력 3 - iterator(커서)
 		// iterator를 이용해서 출력(List, Set만 가능)
@@ -100,6 +100,30 @@ public class ListTest01 {
 			int val = iter.next();
 			System.out.println(val);
 		}
+		
+		System.out.println("----------Iterator2");
+		
+		Iterator<Integer> iter2 = list01.iterator();
+		
+		while(iter2.hasNext()) {
+			int val = iter2.next();
+			System.out.println(val);
+		}
+		
+		System.out.println("----------Iterator3");
+		
+		Iterator<Integer> iter3 = list01.iterator();
+		
+		
+		while(iter3.hasNext()) {
+			int val = iter3.next();	
+			if(val > 5) {
+				iter3.remove();
+			}
+			System.out.println(val);
+		}
+		
+		System.out.println(list01);
 		
 	}
 

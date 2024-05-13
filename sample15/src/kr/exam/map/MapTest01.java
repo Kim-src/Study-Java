@@ -79,7 +79,7 @@ public class MapTest01 {
 			// 변수명을 입력해줘야됐음
 		}
 		
-		System.out.println("----------");
+		System.out.println("----------hash");
 		
 		Iterator<String> iter = keys.iterator();
 		
