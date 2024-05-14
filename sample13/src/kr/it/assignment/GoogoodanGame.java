@@ -1,13 +1,14 @@
 package kr.it.assignment;
 
 import java.util.Date;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class GoogoodanGame {
 	
-	static int countTimeDefault = 3;
+	static int countTimeDefault = 5;
 	static int countTime = countTimeDefault;
 	
 	public static void main(String[] args) {
@@ -41,8 +42,7 @@ public class GoogoodanGame {
 						countTime--;
 						if(countTime == 0) {
 							System.out.println("---------시간 초과---------");
-							System.out.println("숫자를 입력하시면 게임이 종료됩니다.");
-							System.out.println("문자를 입력하시면 에러가 발생됩니다.");							
+							System.out.println("숫자를 입력하시면 게임이 종료됩니다.");							
 						}
 					}
 				}
@@ -55,7 +55,11 @@ public class GoogoodanGame {
 			timer.schedule(task, startTime, 1000); // 1000ms = 1s			
 			
 			if(countTime > 0) {
-				answer = scan.nextInt();
+				try {
+					answer = scan.nextInt();
+				} catch(InputMismatchException e) {
+					answer = 0;
+				}
 			}
 						
 			if(countTime > 0) {
