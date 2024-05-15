@@ -66,6 +66,9 @@ public class ListTest01 {
 		Integer[] arr = list01.toArray(new Integer[list01.size()]);
 		
 		Integer[] arr02 = {1,2,3,4};
+		System.out.println("밍 = " + Arrays.toString(arr02));
+		System.out.println("밍 = " + arr02[2]);
+		System.out.println("밍 = " + list01);
 		int[] arr03 = {1,2,3,4};
 		
 		// Array to List
