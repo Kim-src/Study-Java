@@ -35,6 +35,7 @@ public class LottoGenerator_List {
 				// 생성된 로또 번호가 중복된다면 반복문 순서를 차감시켰습니다.
 				if(lottoWinningNumber.contains(lottoSystemNumber) == true) {
 					i--;
+					// 인덱스 차감이 아닌 remove 메서드를 이용하여 중복된 데이터를 삭제시키는 방법도 있습니다.
 				}
 				// 생성된 로또 번호가 중복되지 않는다면 lottoWinningNumber 리스트에 로또 번호를 할당시켰습니다.
 				else if(lottoWinningNumber.contains(lottoSystemNumber) == false) {
@@ -45,6 +46,7 @@ public class LottoGenerator_List {
 				// 생성된 로또 번호가 중복된다면 반복문 순서를 차감시켰습니다.
 				if(lottoWinningNumber.contains(lottoSystemNumber) == true) {
 					i--;
+					// 인덱스 차감이 아닌 remove 메서드를 이용하여 중복된 데이터를 삭제시키는 방법도 있습니다.
 				}
 				// 생성된 로또 번호가 중복되지 않는다면 lottoBonusNumber 리스트에 로또 번호를 할당시켰습니다.
 				else if(lottoWinningNumber.contains(lottoSystemNumber) == false) {
@@ -76,6 +78,7 @@ public class LottoGenerator_List {
 			lottoCheckNumber = scan.nextInt();
 			
 			// 조건문으로 lottoCheckNumber 변수에 1부터 45까지의 정수가 할당될 경우를 설정하였습니다.
+			// 꼭 if 조건문만이 아니라 try-catch 구문을 적용시킬 수도 있습니다.
 			if(lottoCheckNumber > 0 && lottoCheckNumber < 46) {
 				// 입력된 번호가 중복되지 않는다면 lottoUserNumber 리스트에 로또 번호를 할당시켰습니다.
 				if(lottoUserNumber.contains(lottoCheckNumber) == false) {
