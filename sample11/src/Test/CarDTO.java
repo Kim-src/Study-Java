@@ -1,12 +1,13 @@
 package Test;
 
-public class Car {
+public class CarDTO {
 
     // 변수의 접근제한자를 private으로 설정하였습니다.
     private String carName;
     private String carCompany;
     private int carPrice;
 
+    
     /* Getter */
     // 값을 반환하는 Getter 메서드를 선언하였습니다.
     // Getter의 경우 값을 반환해야 되기 때문에 return 키워드가 있습니다.
@@ -21,6 +22,7 @@ public class Car {
     public int getCarPrice() {
         return this.carPrice;
     }
+    
     
     /* Setter */
     // 값을 저장하는 Setter 메서드를 선언하였습니다.
@@ -45,5 +47,36 @@ public class Car {
     	System.out.print(", 제조사 = " + this.getCarCompany());
     	System.out.println(", 판매가 = " + this.getCarPrice());
     }
-
+    
+    
+    /* 오버로딩 */
+    // 데이터를 유연하게 처리하기 위해 CarDTO 메서드를 오버로딩하였습니다.
+    // 오버로딩의 규칙은 파라미터
+    public CarDTO() {
+    }
+    
+    public CarDTO(String carName, String carCompany, int carPrice) {
+    	this.carName = carName;
+    	this.carCompany = carCompany;
+    	this.carPrice = carPrice;
+    }
+    
+    public CarDTO(String carName, String carCompany) {
+    	this.carName = carName;
+    	this.carCompany = carCompany;
+    }
+    
+    public CarDTO(String carName, int carPrice) {
+    	this.carName = carName;
+    	this.carPrice = carPrice;
+    }
+    
+    public CarDTO(String carName) {
+    	this.carName = carName;
+    }
+    
+    public CarDTO(int carPrice) {
+    	this.carPrice = carPrice;
+    }
+    
 }
