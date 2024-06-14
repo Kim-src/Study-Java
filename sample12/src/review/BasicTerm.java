@@ -26,7 +26,7 @@ public class BasicTerm {
 		System.out.println(age);
 		System.out.println(gender);
 	}
-	
+		
 	
 	/* 실행 클래스 정의 */
 	class ExeTest {
