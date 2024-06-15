@@ -24,7 +24,7 @@ public class GenArray<E> {
 		this.data[size++] = obj;
 	}
 	
-	public E get(int index) {
+	public Object get(int index) {
 		if(index > this.size) {
 			System.out.println("인덱스가 범위를 초과합니다.");
 			return null;
